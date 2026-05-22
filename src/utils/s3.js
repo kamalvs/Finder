@@ -11,7 +11,7 @@ const s3Client = new S3Client({
 
 const getUploadUrl = async (fileName, fileType) => {
   const command = new PutObjectCommand({
-    Bucket: "finder-bucket",
+    Bucket:process.env.S3_BUCKET,
     Key: fileName,
     ContentType: fileType,
   });
